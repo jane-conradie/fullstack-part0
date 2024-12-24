@@ -1,0 +1,18 @@
+```mermaid
+sequenceDiagram
+    participant Browser
+    participant Server
+    Browser->>Server: HTTP POST note content
+    Server->>Browser: 302 Response
+    Note right of Browser: Reloads page
+    Browser->>Server: HTTP GET note page
+    Server->>Browser: note page HTML
+    Browser->>Server: HTTP GET CSS
+    Server->>Browser: CSS file
+    Browser->>Server: HTTP GET JS
+    Server->>Browser: JS file
+    Note right of Browser: Executes JS code to fetch JSON data
+    Browser->>Server: HTTP GET JSON data
+    Server->>Browser: JSON data
+    Note right of Browser: Callback function renders notes
+```
